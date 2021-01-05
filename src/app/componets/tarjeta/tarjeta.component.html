@@ -1,0 +1,12 @@
+<div class="row row-cols-6">
+    <div (click)="VerPelicula( item.id )" *ngFor="let item of items" class="card puntero">
+      <img [src]="item | noimage:300" class="card-img-top" alt="...">
+      <!-- <div class="card-body">
+        <h5 class="card-title">{{item.original_title}}</h5>
+        <p class="card-text">
+            {{item.overview}}
+            <span *ngFor="let artista of item.artists" class="badge badge-pill badge-primary">{{artista.name}}</span>
+        </p>
+      </div> -->
+    </div>
+</div>

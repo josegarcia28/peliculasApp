@@ -1,0 +1,64 @@
+<app-cargando *ngIf="loading"></app-cargando>
+
+<div *ngIf="error" class="alert alert-danger animated fadeIn ">
+    <h3>Error</h3>
+    <p>
+       {{mensajeError}}
+    </p>
+</div>
+<!-- <div class="row bg-white">
+    <div class="container mb-4 mt-4 text-dark">
+        <h2>Top de la Semana</h2>
+        <div class="row ">
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-md-12 div-pic-1 puntero"
+                            (click)="VerPelicula( masPopulares[1].id )"
+                            [ngStyle]="{'background-image': 'url('+ ( masPopulares[1] | noimage:500 ) +')' }">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 div-pic-2 puntero"
+                            (click)="VerPelicula( masPopulares[2].id )"
+                            [ngStyle]="{'background-image': 'url('+ ( masPopulares[2] | noimage:300 ) +')' }">
+                        </div>
+                        <div class="col-md-6 div-pic-2 puntero"
+                            (click)="VerPelicula( masPopulares[3].id )"
+                            [ngStyle]="{'background-image': 'url('+ ( masPopulares[3] | noimage:300 ) +')' }">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-md-6 div-pic-2 puntero"
+                            (click)="VerPelicula( masPopulares[4].id )"
+                            [ngStyle]="{'background-image': 'url('+ ( masPopulares[4] | noimage:300 ) +')' }">
+                        </div>
+                        <div class="col-md-6 div-pic-2 puntero"
+                            (click)="VerPelicula( masPopulares[5].id )"
+                            [ngStyle]="{'background-image': 'url('+ ( masPopulares[5] | noimage:300 ) +')' }">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 div-pic-1 puntero"
+                            (click)="VerPelicula( masPopulares[6].id )"
+                            [ngStyle]="{'background-image': 'url('+ ( masPopulares[6] | noimage:500 ) +')' }">
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="row">
+    <div class="container mt-2">
+        <h2>Top de la Semana</h2>
+        <app-tarjeta [items]="masPopulares | slice:0:18"></app-tarjeta>
+    </div>
+</div>
+<div class="row bg-white">
+    <div class="container mt-2 text-dark">
+        <h2>Mas Populares</h2>
+        <app-tarjeta [items]="getPopulares | slice:0:18"></app-tarjeta>
+    </div>
+</div>

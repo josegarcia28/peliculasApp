@@ -1,0 +1,23 @@
+<app-cargando *ngIf="loading" class="m-5"></app-cargando>
+<div class="container" >
+    <div class="row bg-white pt-3 pb-5">
+        <div class="col">
+            <input #termino type="text" (keyup)="buscar(termino.value)" class="form-control" placeholder="Buscar Pelicula">
+        </div>
+    </div>
+    <app-sinreg *ngIf="pelicula.length === 0 "></app-sinreg>
+    <div class="row row-cols-4 pb-5" *ngIf="pelicula.length > 0 ">
+        <div (click)="VerPelicula( item.id )" *ngFor="let item of pelicula" class="card puntero">
+            <img [src]="item | noimage:300" class="card-img-top" alt="...">
+            <div class="card-body" style="max-height: 18rem;">
+                <h5 class="card-title">{{item.original_title}}</h5>
+                <p class="card-text text-justify"> {{item.overview | slice:0:200}}...</p>
+                <button (click)="VerPelicula( item.id )"
+                        class="btn btn-outline-info btn-block" 
+                        type="button">
+                    Ver mas...
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
